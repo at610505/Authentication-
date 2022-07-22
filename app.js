@@ -65,6 +65,11 @@ app.route("/login")
           });
     });
 
+app.route("/logout").get(function(req,res){
+    req.logOut();
+    res.redirect("/");
+});
+
 app.route("/secrets").get(function(req,res){
     if (req.isAuthenticated()) {
         res.render("secrets");
