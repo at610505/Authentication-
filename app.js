@@ -66,7 +66,9 @@ app.route("/login")
     });
 
 app.route("/logout").get(function(req,res){
-    req.logOut();
+    req.logOut(function(err){
+        console.log(err);
+    });
     res.redirect("/");
 });
 
